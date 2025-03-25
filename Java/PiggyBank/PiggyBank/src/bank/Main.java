@@ -6,14 +6,20 @@ public class Main {
 
 	public static void main(String[] args) {
 		
+		//Variaveis necessarias
 		Cofrinho banco = new Cofrinho();
 		Scanner input = new Scanner(System.in);
 		double userDoubleInput;
 		int userInput;
 		boolean a = true;
+		
+		
 		System.out.println("");
 		System.out.println("Boas vindas ao Banco do Porquinho!");
-		while(a) {	
+		
+		
+		while(a) {
+			
 			System.out.println("Por favor Selecione uma opção abaixo: ");
 			System.out.println();
 			System.out.println("1.Adicionar Moeda, 2.Remover Moeda, 3.Listar Moedas, 4.Calcular Moedas em Reais. 5.Sair");
@@ -56,29 +62,36 @@ public class Main {
 									}
 									
 									Euro.valor = userDoubleInput;
+									
 									banco.adicionar(Euro);
 									break;
 									
 								case 2:
+									
 									Moeda Dolar = new Dolar("Dolar");
 									System.out.println("Qual o valor da moeda?");
+									
 									userDoubleInput = input.nextDouble();
 									if(userDoubleInput <= 0)
 									{
 										throw new RuntimeException("Valor Inválido");
 									}
+									
 									Dolar.valor = userDoubleInput;
 									banco.adicionar(Dolar);
 									break;
 									
 								case 3:
+									
 									Moeda Real = new Real("Real");
 									System.out.println("Qual o valor da moeda?");
+									
 									userDoubleInput = input.nextDouble();
 									if(userDoubleInput <= 0)
 									{
 										throw new RuntimeException("Valor Inválido");
 									}
+									
 									Real.valor = userDoubleInput;
 									banco.adicionar(Real);
 									break;
@@ -88,6 +101,7 @@ public class Main {
 						
 					//Remover moedas
 					case 2:
+						
 						System.out.println();
 						System.out.println("Remover Moedas");
 						System.out.println("Lista de moedas no banco:");
@@ -127,7 +141,10 @@ public class Main {
 			catch(Exception e) {
 				System.out.println(e.getMessage());
 			}
-			
+			finally {
+				System.out.println("Algo deu errado");
+			}
+			break;
 		}
 		
 		

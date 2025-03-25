@@ -5,12 +5,16 @@ import java.util.Collection;
 
 public class Cofrinho {
 	
+	//Coleção de moedas
 	private Collection<Moeda> listaMoedas;
 	
+	//construtor
 	public Cofrinho() {
 		this.listaMoedas = new ArrayList<Moeda>();
 	}
 	
+	
+	//adicionar moedas
 	public void adicionar(Moeda novaMoeda) {
 		
 		listaMoedas.add(novaMoeda);
@@ -20,7 +24,7 @@ public class Cofrinho {
 	}
 	
 
-	
+	//remover moedas
 	public void remover(double moedaIndex) {
 		
 		for(Moeda moedas : listaMoedas)
@@ -32,6 +36,7 @@ public class Cofrinho {
 		}
 	}
 	
+	//listar as moedas
 	public void listagemMoedas() {
 		
 		for(Moeda moeda : listaMoedas) {
@@ -39,6 +44,8 @@ public class Cofrinho {
 		}
 	}
 	
+	
+	//converção de moedas
 	public void totalConvertido() {
 		
 		double valorTotal = 0;
